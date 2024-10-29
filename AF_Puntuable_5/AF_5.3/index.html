@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AF 5.1</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>AF_5.3</h1>
+<!-- Se requiere hacer dos páginas web. En la primera de ellas aparecerá un formulario con 3
+campos de texto. Uno para preguntar el nombre del usuario, el 2º para preguntar su primer
+apellido y otro para preguntar la contraseña.
+Al pulsar sobre el botón "Enviar" debemos recoger en otra página web dichos datos y
+comparar con los datos (Nombre, Apellido y Clave) que tengamos en una matriz como la
+siguiente:
+Nombre Apellido Clave Perfil
+Ana Martín Ana1000 Perfil1
+Ana Gómez Ana2000 Perfil2
+Fernando Duque Motril2222 Perfil3
+Maria González Profe333 Perfil4
+Benito Pérez Benito1111 Perfil5
+* * * *
+La matriz anterior debéis crearla vosotros con los datos que aquí se ven (es como si fuese
+nuestra base de datos de usuarios). Si os fijáis, la última fila de la matriz tendrá un "*" en cada
+campo para saber que esa es precisamente la última fila.
+Al comparar con los datos de la matriz anterior, debemos verificar si los datos introducidos son
+correctos. En caso de no serlo, mostraremos un mensaje diciendo que los datos no son
+correctos. Y en caso de serlo debemos mostrar un mensaje con el "Perfil" de acceso que le
+correspondería para entrar en el sistema.
+Nota: "Al comparar en la matriz, debemos hacerlo como si no supiésemos la cantidad de
+usuarios que tiene la matriz. En este momento hay 5 usuarios, pero podría haber 1000, por
+tanto, hacer un algoritmo que valga para cualquier número de usuarios".
+ -->
+    </header>
+    <main>
+      <div>
+
+        <form action="codigo.php" method="post">
+            <table>
+                <tr>
+                    <span>Introduce el nombre: </span>
+                    <input type="text" name="nombre" value="" required>
+                </tr>
+                <br>
+                <tr>
+                    <span>Introduce el apellido: </span>
+                    <input type="text" name="apellido" value="" required>
+                </tr>
+                <br>
+                <tr>
+                    <span>Introduce la contraseña: </span>
+                    <input type="text" name="clave" value="" required>
+                </tr>
+                <br>
+                <tr>
+                    <input class="button b1" type="submit" value="Mostrar">
+                    <input class="button b2" type="reset" value="Borrar">
+                </tr>
+            </table>
+        </form>
+
+      </div>
+    </main>
+    <footer>
+      <p><i>2º DAW</i></p>
+      <p><i>Desarrollo Web En Entorno Servidor</i></p>
+      <p><i>Juan Fernández Herreros</i></p>
+    </footer>
+  </body>
+</html>

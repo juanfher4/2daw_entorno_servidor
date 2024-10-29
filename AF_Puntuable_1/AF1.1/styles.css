@@ -1,0 +1,36 @@
+body {
+    background-color: lightgreen;
+}
+
+section {
+    background-color:lightyellow;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 22%;
+}
+
+.button{
+    background-color: white;
+    color: blueviolet;
+    padding: 4px 15px;
+    border: 2px solid blueviolet;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.button:hover {
+    background-color: blueviolet ;
+    color: lightyellow;
+}
+
+input {
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+input:hover {
+    background-color: floralwhite;
+    border-color: darkmagenta;
+}

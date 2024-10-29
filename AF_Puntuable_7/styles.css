@@ -1,0 +1,28 @@
+* {
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(204 203 208);
+    text-align: center;
+}
+
+div {
+    background-color: rgb(151 191 154);
+    box-shadow: 3px 3px 5px 0px rgb(235, 255, 236);
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+a {
+    background-color: rgb(72 179 76);
+    padding: 10px;
+    color: rgb(235, 255, 236);
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: rgb(235, 255, 236);
+    color: rgb(72 179 76);
+}

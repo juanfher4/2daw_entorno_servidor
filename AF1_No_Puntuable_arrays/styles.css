@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(184, 216, 133);
+    text-align: center;
+    font-family: rufina;
+}
+
+h1 {
+    color: rgb(107, 63, 31);
+}
+
+span {
+    color: rgb(130, 76, 38);
+}
+
+.button{
+    background-color: rgb(235, 247, 217);
+    color: rgb(158, 92, 45);
+    padding: 4px 15px;
+    border: 2px solid rgb(158, 92, 45);
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.b2 {
+    background-color: rgb(235, 247, 217);
+}
+
+.button:hover {
+    background-color: rgb(203, 139, 94) ;
+    color: rgb(235, 247, 217);
+}
+
+input {
+    background-color: rgb(235, 247, 217);
+    color: rgb(158, 92, 45);
+    padding: 4px 15px;
+    border: 2px solid rgb(158, 92, 45);
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+input:hover {
+    background-color: rgb(203, 139, 94) ;
+    color: rgb(235, 247, 217);
+}
+
+footer {
+    border-radius: 8px;
+    margin-top: 30px;
+    background-color: rgb(203, 139, 94);
+    color: rgb(255, 238, 225);
+    padding: 5px;
+}

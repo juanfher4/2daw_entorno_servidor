@@ -1,0 +1,68 @@
+body {
+    background-color: rgb(244, 190, 151);
+    text-align: center;
+    font-family: rufina;
+}
+
+h1 {
+    color: rgb(107, 63, 31);
+}
+
+span {
+    color: rgb(130, 76, 38);
+}
+
+.button{
+    background-color: rgb(255, 238, 225);
+    color: rgb(158, 92, 45);
+    padding: 4px 15px;
+    border: 2px solid rgb(158, 92, 45);
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.b2 {
+    background-color: rgb(255, 219, 194);
+}
+
+.button:hover {
+    background-color: rgb(203, 139, 94) ;
+    color: rgb(255, 238, 225);
+}
+
+input {
+    background-color: rgb(255, 238, 225);
+    color: rgb(158, 92, 45);
+    padding: 4px 15px;
+    border: 2px solid rgb(158, 92, 45);
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+input:hover {
+    background-color: rgb(203, 139, 94) ;
+    color: rgb(255, 238, 225);
+}
+
+table {
+    margin-left: 20px;
+}
+
+td {
+    padding: 2px;
+    border: 2px solid rgb(158, 92, 45);
+    border-radius: 7px;
+    color: rgb(158, 92, 45);
+}
+
+td:hover {
+    border: 2px solid rgb(255, 238, 225);
+}
+
+footer {
+    border-radius: 8px;
+    margin-top: 30px;
+    background-color: rgb(203, 139, 94);
+    color: rgb(255, 238, 225);
+    padding: 5px;
+}

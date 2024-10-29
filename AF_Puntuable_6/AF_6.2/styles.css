@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+
+body {
+    background-color: rgb(156, 255, 117);
+    text-align: center;
+    font-family: "Crimson Text", serif;
+    font-style: normal;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.sin-margen {
+    margin: 0 !important;
+}
+
+h1 {
+    color: rgb(37, 202, 29);
+    text-shadow: rgb(255, 255, 255) 4px 0 5px;
+}
+
+div {
+    background-color: rgb(37, 202, 29);
+    color: rgb(214, 240, 203);
+    padding: 10px;
+    margin: auto;
+    border-radius: 7px;
+    box-shadow: 6px 6px 5px 0px rgb(50, 152, 7);
+    transition: 250ms;
+    text-align: center;
+}
+
+div:hover {/* 
+    transform: scale(1.2); */
+    transition: 200ms;
+    box-shadow: 2px 2px 1px 0px rgb(50, 152, 7);
+    color: rgb(61, 180, 10);
+    background-color: rgb(193, 252, 191);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 2px solid rgb(50, 152, 7);
+    border-radius: 7px;
+    padding: 3px;
+}
+
+a {
+    background-color: rgb(71 170 77);
+    padding: 7px;
+}
+
+footer {
+    display: flex;
+    background-color: rgb(71, 200, 16);
+    color: rgb(214, 240, 203);
+    position: absolute;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}

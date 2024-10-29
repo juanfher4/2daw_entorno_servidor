@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Calculos matemáticos">
+	<meta name="keywords" content="PHP,Formularios,Javascript,diseño web">
+    <title>AF1.1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script language="Javascript">
+        function valida_envia() {
+            if (document.formulario_operaciones.numero1.value.length==0){
+                alert("Tienes que escribir un número");
+                // Con focus haces que el cursor vaya a donde pongas
+                document.formulario_operaciones.numero1.focus();
+                return 0;
+            }
+            
+            if (document.formulario_operaciones.numero2.value.length==0){
+                alert("Tienes que escribir un número");
+                // Con focus haces que el cursor vaya a donde pongas
+                document.formulario_operaciones.numero2.focus();
+                return 0;
+            }
+            
+            if (isNaN(parseFloat(document.formulario_operaciones.numero1.value))){
+                alert("Debes introducir un dato numérico");
+                document.formulario_operaciones.numero1.focus();
+                return 0;
+            }
+            
+            if (isNaN(parseFloat(document.formulario_operaciones.numero2.value))){
+                alert("Debes introducir un dato numérico");
+                document.formulario_operaciones.numero2.focus();
+                return 0;
+            }
+            
+            document.formulario_operaciones.submit();
+        }
+    </script>
+  </head>
+  <body>
+    <section>
+        <form name="formulario_operaciones" action="codigo.php" method="post">
+            <table>
+				<tr>
+					<td>Escribe un número: </td>
+					<td><input type="text" name="numero1" value="" size=15></td>
+				</tr>
+				<tr>
+					<td>Escribe otro número: </td>
+					<td><input type="text" name="numero2" value="" size=15></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input class="button" type="button" value="Calcular" onclick="valida_envia()">
+						<input class="button" type="reset" value="Borrar">
+					</td>
+				</tr>
+			</table>
+        </form>
+    </section>
+  </body>
+</html>

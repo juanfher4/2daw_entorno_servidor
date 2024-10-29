@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(202, 224, 162);
+    text-align: center;
+    font-family: rufina;
+}
+
+h1 {
+    color: rgb(36, 120, 46);
+}
+
+span {
+    color: rgb(48, 127, 57);
+}
+
+main {
+    justify-content: center;
+    text-align: center;
+}
+
+table {
+    margin-left: 20px;
+    align-content: center;
+}
+
+td {
+    padding: 2px;
+    border: 2px solid rgb(36, 120, 46);
+    border-radius: 7px;
+    color: rgb(36, 120, 46);
+}
+
+td:hover {
+    border: 2px solid rgb(202, 224, 162);
+}
+
+footer {
+    border-radius: 8px;
+    margin-top: 30px;
+    background-color: rgb(68, 150, 78);
+    color: rgb(202, 224, 162);
+    padding: 5px;
+}
