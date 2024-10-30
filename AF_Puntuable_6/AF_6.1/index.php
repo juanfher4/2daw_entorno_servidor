@@ -59,11 +59,6 @@ ejemplo una función de ordenación de arrays ".
         // Inicializo arrays
         $tiradas = [];
         $premios = [];
-        // Acumuladores
-        $jug1 = 0;
-        $jug2 = 0;
-        $jug3 = 0;
-        $jug4 = 0;
 
         for ($i = 0; $i < 12; $i++) {
           $random_jugadores = random_int(1,4);
@@ -88,36 +83,31 @@ ejemplo una función de ordenación de arrays ".
             $jugadores = $ti[1];
             $suma[$jugadores] += $dados;
           }
+          rsort($suma);
           return $suma;
         }
 
         // Le doy cada medalla a su jugador
-        function medallas($suma) {
-          
-          // Muestro las medallas de cada jugador
+        function calculo_medallas($suma) {
+          $medallas = ["&#x1f947", "&#x1f948", "&#x1f949", "&#129396"];
+          $premios = [];
+
           foreach ($suma as $j => $sum) {
-            $premios[] = [$j, $sum, ""];
+            $premios[] = [$j+1, $sum, ""];
           }
 
+          for ($i=0; $i < ; $i++) {
+            
+          }
+          
           return $premios;
 
         }
 
-        function calculo_medallas($suma) {
-          $medallas = ["&#x1f947", "&#x1f948", "&#x1f949", "&#129396"];
-
-          
-
-        }
-
-        function mostrar($suma, $med, $calculo_medallas) {
+        function mostrar($suma, $calculo_medallas) {
 
           print("<pre>");
           print_r($suma);
-          print("</pre>");
-            
-          print("<pre>");
-          print_r($med);
           print("</pre>");
 
           print("<pre>");
@@ -128,17 +118,14 @@ ejemplo una función de ordenación de arrays ".
 
 /* 
         print("<pre>");
-        print_r($tiradas);
+        print_r($tiradas)
         print("</pre>");
  */
 
         $suma = grupos($tiradas);
-        rsort($suma);
+        $calculo_medallas = calculo_medallas($suma);
 
-        $med = medallas($suma);
-        $calculo_medallas = calculo_medallas($suma, $med);
-
-        mostrar($suma, $med, $calculo_medallas);
+        mostrar($suma, $calculo_medallas);
 
       ?>
       </div>

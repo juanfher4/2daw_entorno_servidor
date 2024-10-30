@@ -40,173 +40,106 @@ Nota: "En este ejercicio se pueden reutilizar funciones ya realizadas en las AF6
     </header>
     <main>
       <div>
+        <a href="">Probar de nuevo</a>
         <?php
 
           $icon_jugadores = ["&#129443;", "&#129503;", "&#129464;", "&#129484;"];
-          $icon_medallas = ["&#x1f947", "&#x1f948", "&#x1f949", "&#129396"];
 
-/* 
-          // Inicializo arrays
-          $tiradas = [];
-          $premios = [];
-          // Acumuladores
-          $jug1 = 0;
-          $jug2 = 0;
-          $jug3 = 0;
-          $jug4 = 0;
+          function tiradas() {
 
-          for ($i = 0; $i < 12; $i++) {
-          $random_jugadores = random_int(1,4);
-          $random_dados = random_int(1,6);
-          $tiradas[$i][0] = $random_dados;
-          $tiradas[$i][1] = $random_jugadores;
+            $tiradas = [];
+
+            for ($i = 0; $i < 12; $i++) {
+              $random_jugadores = random_int(1,4);
+              $random_dados = random_int(1,6);
+              $tiradas[$i][0] = $random_dados;
+              $tiradas[$i][1] = $random_jugadores;
+            }
+
+            return $tiradas;
+
           }
 
           // Función para agrupar los puntos por jugadores
           function grupos($tiradas) {
 
-          $suma = [
+            $sumas = [
               1 => 0,
               2 => 0,
               3 => 0,
               4 => 0
-          ];
+            ];
 
-          // Sumo los puntos de cada jugador
-          foreach ($tiradas as $ti) {
+            // Sumo los puntos de cada jugador
+            foreach ($tiradas as $ti) {
               $dados = $ti[0];
               $jugadores = $ti[1];
-              $suma[$jugadores] += $dados;
+              $sumas[$jugadores] += $dados;
+            }
+            rsort($sumas);
+            return $sumas;
           }
-          return $suma;
-          }
-
+          
           // Le doy cada medalla a su jugador
-          function medallas($suma) {
+          function calculo_medallas($sumas) {
+            // Array de medallas
+            $medallas = ["&#x1f947", "&#x1f948", "&#x1f949", "&#129396"];
+            $premios = [];
 
-          // Muestro las medallas de cada jugador
-          foreach ($suma as $j => $sum) {
-              $premios[] = [$j, $sum, ""];
+            // Si dos valores son iguales se quita uno
+            $sumastop = array_unique($sumas);
+            // Se ordena el array
+            rsort($sumastop);
+
+            // Se introducen valores al array $premios[id de jugador, suma de puntos de cada jugador, medalla de cada jugador]
+            foreach ($sumas as $jugador => $suma) {
+              $premios[] = [$jugador+1, $suma];
+            }
+
+            for ($i=0; $i < 4; $i++) {
+              // Introduzco cada medalla en su hueco
+              if ($sumastop[0] == $premios[$i][1]) {
+                $premios[$i][2] = $medallas[0];
+              } else if ($sumastop[1] == $premios[$i][1]) {
+                $premios[$i][2] = $medallas[1];
+              } else if ($sumastop[2] == $premios[$i][1]) {
+                $premios[$i][2] = $medallas[2];
+              } else {
+                $premios[$i][2] = $medallas[3];
+              }
+
+            }
+
+            return $premios;
+
           }
           
-          
+          // Función para depurar
+          function depurar($tiradas, $sumas, $calculo_medallas) {
 
-          return $premios;
+            print("<pre>");
+            print_r($tiradas);
+            print("</pre>");
+  
+            print("<pre>");
+            print_r($sumas);
+            print("</pre>");
 
-          }
-
-          function calculo_medalla($suma) {
-          // Recorro suma
-          foreach ($suma as $jugador => $valor) {
-              
-          }
-          }
-
-          // Muestro las tiradas de dados
-
-          foreach ($tiradas as $i => $ti) {
-          print($ti[0] . " ");
-          }
-          print(" - Tiradas dados");
-
-          print("<br>");
-
-          // Muestro las tiradas de jugadores
-
-          foreach ($tiradas as $i => $ti) {
-          print($ti[1] . " ");
-          }
-          print(" - Tiradas jugadores");
-
-          print("<pre>");
-          print_r($tiradas);
-          print("</pre>");
-
-          // Meto la función en esta variable
-          $suma = grupos($tiradas);
-
-          //Lo imprimo
-          print("<pre>");
-          print_r($suma);
-          print("</pre>");
-          /* 
-          print($suma[1]); */
-/*
-          $med = medallas($suma);
-
-          print("<pre>");
-          print_r($med);
-          print("</pre>");
-
-          $calculo_medallas = calculo_medalla($suma, $med);
-
-          print("<pre>");
-          print_r($calculo_medallas);
-          print("</pre>");
-*/          
-
-          // Inicializo arrays
-          $tiradas = [];
-          $posiciones = [];
-          // Acumuladores
-          $jug1 = 0;
-          $jug2 = 0;
-          $jug3 = 0;
-          $jug4 = 0;
-
-          for ($i = 0; $i < 12; $i++) {
-            $random_jugadores = random_int(1,4);
-            $random_dados = random_int(1,6);
-            $tiradas[$i][0] = $random_dados;
-            $tiradas[$i][1] = $random_jugadores;
-          }
-
-          // Función para agrupar las posiciones
-          function posiciones($tiradas) {
-              $posiciones = [];
-              foreach ($tiradas as $i => $ti) {
-                  $jug = $ti[1];
-                  $posiciones[$jug][] = $i;
-              }
-            return $posiciones;
-          }
-
-          function num_jugador($tiradas) {
-              foreach ($tiradas as $i => $ti) {
-                  $num[] = $i;
-              }
-              return $num;
-          }
-
-          // Meto la función en esta variable
-          $pos = posiciones($tiradas);
-          $num = num_jugador($tiradas);
-
-          print("<pre>");
-          print_r($pos);
-          print("</pre>");
-
-
-          print("<table>");
-          print("<tr><th colspan='100%'>POSICIONES DE JUGADORES</th></tr>");
-          print("<tr><th>Jugadores</th><th colspan='100%'>Posiciones</th></tr>");
-
-          for ($i = 1; $i <= 4; $i++) {
-
-              print("<tr>");
-
-              print("<td>{$icon_jugadores[$i]}</td>");
-              for($j = 0; $j < count($pos[$i]); $j++) {
-              }
-
-              print("</tr>");
+            print("<pre>");
+            print_r($calculo_medallas);
+            print("</pre>");
 
           }
 
-          print("</table>");
+          // Pongo las funciones en variables
+          $tiradas = tiradas();
+          $sumas = grupos($tiradas);
+          $calculo_medallas = calculo_medallas($sumas);
+
+          // Función que depura
+          depurar($tiradas, $sumas, $calculo_medallas);
 
         ?>
-        <a href="">Probar de nuevo</a>
       </div>
     </main>
     <footer>
