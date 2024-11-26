@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <h1>REPARTICIÓN DE MEDALLAS</h1>
+      <h2>REPARTICIÓN DE MEDALLAS</h2>
 <!-- Realizar un programa para simular una partida de dados entre 4 jugadores. El juego consiste
 en lanzar 12 dados sobre un tablero repartido en forma de líneas horizontales entre los 4
 jugadores.
@@ -40,10 +40,8 @@ Nota: "En este ejercicio se pueden reutilizar funciones ya realizadas en las AF6
     </header>
     <main>
       <div>
-        <a href="">Probar de nuevo</a>
-        <?php
 
-          $icon_jugadores = ["&#129443;", "&#129503;", "&#129464;", "&#129484;"];
+        <?php
 
           function tiradas() {
 
@@ -76,7 +74,7 @@ Nota: "En este ejercicio se pueden reutilizar funciones ya realizadas en las AF6
               $jugadores = $ti[1];
               $sumas[$jugadores] += $dados;
             }
-            rsort($sumas);
+
             return $sumas;
           }
           
@@ -115,7 +113,7 @@ Nota: "En este ejercicio se pueden reutilizar funciones ya realizadas en las AF6
           }
           
           // Función para depurar
-          function depurar($tiradas, $sumas, $calculo_medallas) {
+          function depurar($tiradas, $sumas, $premios) {
 
             print("<pre>");
             print_r($tiradas);
@@ -126,18 +124,59 @@ Nota: "En este ejercicio se pueden reutilizar funciones ya realizadas en las AF6
             print("</pre>");
 
             print("<pre>");
-            print_r($calculo_medallas);
+            print_r($premios);
             print("</pre>");
+
+          }
+
+          function mostrar($tiradas, $premios) {
+            $icon_jugadores = ["&#129443;", "&#129503;", "&#129464;", "&#129484;"];
+            $colores = ["#DC9845", "#ba9169", "#A2744E", "#DB907D"];
+
+            print("<table>");
+
+            print("<tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>Puntos totales</th><th></th></tr>");
+
+            for ($i = 0; $i < 4; $i++) {
+
+              print("<tr style='background-color:{$colores[$premios[$i][0]-2]}'>");
+              
+              print("<td>{$icon_jugadores[$i]}</td>");
+
+                for ($j=0; $j < 12; $j++) { 
+                  if ($tiradas[$j][1] == $i+1) {
+                    $dado = $tiradas[$j][0];
+                    print "<td><img src='imagenes/$dado.png' width='30'></td>";
+                   
+                  } else {
+                    print("<td></td>");
+                  }
+                }
+              
+              print("<td>{$premios[$i][1]}</td>");
+
+              print("<td>{$premios[$i][2]}</td>");
+              
+              print("</tr>");
+  
+            }
+
+            print("</table>");
 
           }
 
           // Pongo las funciones en variables
           $tiradas = tiradas();
           $sumas = grupos($tiradas);
-          $calculo_medallas = calculo_medallas($sumas);
+          $premios = calculo_medallas($sumas);
 
           // Función que depura
-          depurar($tiradas, $sumas, $calculo_medallas);
+          depurar($tiradas, $sumas, $premios);
+
+          // Funcuón que muestra la tabla
+          mostrar($tiradas, $premios);
+
+          print("<a href=''>Probar de nuevo</a>");
 
         ?>
       </div>

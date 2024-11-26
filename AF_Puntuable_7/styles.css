@@ -1,5 +1,6 @@
 * {
     text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -13,6 +14,15 @@ div {
     border-radius: 5px;
     text-align: center;
     align-items: center;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    margin-inline: 80px;
+}
+
+h2 {
+    background-color: rgb(91 92 86);
+    color: rgb(232 231 236);
+    margin-inline: 200px;
 }
 
 a {
@@ -20,9 +30,30 @@ a {
     padding: 10px;
     color: rgb(235, 255, 236);
     border-radius: 5px;
+    transition: 250ms;
+    margin-top: 20px !important;
 }
 
 a:hover {
     background-color: rgb(235, 255, 236);
     color: rgb(72 179 76);
+}
+
+table {
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+td {
+    height: 40px;
+    width: 40px;
+}
+
+footer {
+    background-color: rgb(143, 180, 146);
+    border: 5px solid rgb(151 191 154);
+    border-radius: 5px;
+    margin-inline: 80px;
+    margin-top: -10px;
+    box-shadow: 3px 3px 5px 0px rgb(235, 255, 236);
 }

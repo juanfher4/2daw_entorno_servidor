@@ -111,7 +111,7 @@ formato “print_r()” como en forma de tabla html, para que sea más legible
             
             print("<td>Jugador {$num[$i]}:</td>");
             for($j = 0; $j < count($pos[$i]); $j++) {
-                print("<td>{$pos[$i][$j]}</td>");
+              print("<td>{$pos[$i][$j]}</td>");
             }
             
             print("</tr>");

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+body {
+    background-color: rgb(247, 133, 66);
+    text-align: center;
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0;
+}
+
+h2 {
+    color: rgb(176, 71, 9);
+    text-shadow: rgb(255, 255, 255) 2px 0 6px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+div {
+    background-color: rgb(37, 202, 29);
+    color: rgb(214, 240, 203);
+    padding: 10px;
+    margin: auto;
+    border-radius: 7px;
+    box-shadow: 6px 6px 5px 0px rgb(50, 152, 7);
+    max-width: 100rem;
+    transition: 250ms;
+    margin-top: 50px;
+}
+
+input, select {
+    background-color: rgb(165, 236, 135);
+    color: rgb(71, 200, 16);
+    padding: 4px 15px;
+    border: 1px solid rgb(71, 200, 16);
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: .4s;
+}
+
+input:hover, select:hover {
+    background-color: rgb(71, 200, 16) ;
+    color: rgb(165, 236, 135);
+    border: 1px solid rgb(165, 236, 135);
+}
+
+input:focus-visible, select:focus-visible {
+    outline: none;
+}
+
+footer {
+    display: flex;
+    background-color: rgb(232, 98, 19);
+    color: rgb(255, 214, 191);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-evenly;
+}
