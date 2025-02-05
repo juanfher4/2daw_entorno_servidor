@@ -1,0 +1,5 @@
+1	horchata.png	Horchata	horchata	horchata.pdf	bebidas
+2	horchata.png	arroz con carne	adasd	horchata.pdf	bebidas
+3	arroz.jpg	arroz	qweqwe	arroz.pdf	arroces
+4	arroz_con_leche.jpg	cszsc	sadfsdf	arroz.pdf	verduras,arroces
+5	arroz_carne.png	cszsc	asfadsfz	Aperitivos_festivos.pdf	arroces,postres

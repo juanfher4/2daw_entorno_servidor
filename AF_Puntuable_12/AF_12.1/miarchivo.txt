@@ -1,0 +1,17 @@
+
+        **********USUARIO*********
+        NOMBRE: Juan y Fernández Herreros
+        EDAD: 19
+        FECHA_NACIMIENTO: 2004-12-09
+        E-MAIL: juanfpcr6@gmail.com
+        TELEFONO: 789456123
+        
+        
+        **********USUARIO*********
+        NOMBRE: cszsc y fj
+        EDAD: 65
+        FECHA_NACIMIENTO: 2001-12-05
+        E-MAIL: jferher@g.educaand.es
+        TELEFONO: 789451123
+        
+        

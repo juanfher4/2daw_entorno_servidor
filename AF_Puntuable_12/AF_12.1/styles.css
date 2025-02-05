@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+* {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Crimson Text", serif;
+    margin: 0;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    background-color: rgb(226, 169, 242);
+}
+
+h1 {
+    border-radius: 6px;
+    color: rgb(151, 52, 179);
+    margin-inline: 100px;
+    text-align: center;
+}
+
+main {
+    background-color: rgb(246, 222, 253);
+    padding-top: 15px;
+    padding-bottom: 25px;
+    height: auto;
+    padding: auto;
+}
+
+#morado {
+    margin-inline: 25%;
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+}
+
+input, a {
+    background-color: rgb(234, 191, 247);
+    border: 2px solid rgb(151, 52, 179);
+    padding: 10px;
+    color: rgb(151, 52, 179);
+    border-radius: 5px;
+    transition: 250ms;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+.derecha {
+    background-color: rgb(151, 52, 179);
+    color: rgb(246, 222, 253);
+    border-radius: 7px;
+    margin-left: 40px;
+    padding: 10px;
+}
+
+footer {
+    border-top: 1px solid rgba(72, 119, 76, 0.393);
+    background-color: rgb(151, 52, 179);
+    color: rgb(246, 222, 253);
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -62,7 +62,7 @@ que ocupa la posición enésima contada de derecha a izquierda.
                     $n = $len_cadena + $n;
                 }
 
-                if ($n < 0 || $n >= $len_cadena) {
+                if ($n >= $len_cadena) {
                     return [];
                 }
 

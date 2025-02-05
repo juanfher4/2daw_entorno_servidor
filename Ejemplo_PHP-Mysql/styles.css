@@ -1,0 +1,17 @@
+table {
+    border: none;
+    margin-top: 20%;
+}
+
+th {
+    border: none;
+    background-color: #01949a;
+    color: white;
+    padding: 3px;
+}
+
+td {
+    border: none;
+    background-color: #71f4f997;
+    padding: 3px;
+}

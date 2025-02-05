@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+* {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Crimson Text", serif;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+}
+
+header {
+    border-bottom: 2px solid #4ca09cc6;
+    text-align: center;
+    background-color: #b2f4f1;
+    color: #015451;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f6ffff;
+}
+
+form, .mensaje {
+    text-align: center;
+    align-content: center;
+    color: #015451;
+    background-color: #c6faf8;
+    border: 2px solid #4ca09c;
+    border-radius: 12px;
+    width: 400px;
+    height: 370px;
+    padding-block: 10px;
+    font-size: 20px;
+    box-shadow: 10px 5px 30px -7px rgba(0,0,0,0.75);
+    margin: 20px;
+}
+
+input {
+    margin-block: 5px;
+    border: 1px solid #4ca09c;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+.button {
+    color: #015451;
+    background-color: #f6ffff !important;
+    padding: 8px;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.mensaje {
+    height: 60px;
+    font-size: 17px;
+}
+
+table {
+    background-color: #c6faf8;
+    border: 2px solid #4ca09c;
+    border-radius: 12px;
+    margin: 20px;
+    border-spacing: 0;
+    box-shadow: 10px 5px 30px -7px rgba(0, 0, 0, 0.75);
+    padding: 10px;
+}
+
+th {
+    border: none;
+    background-color: #01949a;
+    color: white;
+    padding: 3px;
+    border: 1px solid #71f4f997;
+    border-radius: 3px;
+}
+
+td {
+    border: none;
+    padding: 3px;
+    border: 0.5px dashed rgb(30, 207, 213);
+    border-radius: 5px;
+    color: #01949a;
+    padding: 5px;
+}
+
+footer {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #436d6b;
+    color: #b2f4f1;
+}

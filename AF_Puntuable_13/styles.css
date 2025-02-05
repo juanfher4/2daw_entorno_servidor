@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+* {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Crimson Text", serif !important;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
+
+main, .main {
+    background-image: url(./imágenes/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.cont_form {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fafafa;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    box-shadow: 0 0 14px;
+}
+
+.album {
+    border-radius: 12px;
+    box-shadow: 0px 0 6px;
+    transition: .2s;
+}
+
+.album:hover {
+    box-shadow: 0px 0 2px;
+    transform: scale(1.004);
+}
+
+.form_filtrar {
+    margin-top: 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.filtrar {
+    margin-inline: 10px;
+}
+
+.bd-placeholder-img {
+    object-fit: cover;
+    height: 225px;
+    width: 100%;
+}
+
+h4 {
+    text-align: center;
+}
+
+input {
+    margin-bottom: 8px !important;
+}
+
+.b3 {
+    text-align: center !important;
+}
+
+footer {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}

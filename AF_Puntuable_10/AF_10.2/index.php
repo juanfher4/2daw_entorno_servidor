@@ -121,6 +121,11 @@ Cadena final = 1231hola12312”.
                         }
 
                         $cadena = $rellenos . $cadena;
+                        $len_cadena2 = strlen($cadena);
+
+                        if ($len_cadena2 < $n) {
+                            
+                        }
                         
                     }
 

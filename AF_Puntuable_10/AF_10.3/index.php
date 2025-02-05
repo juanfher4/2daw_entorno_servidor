@@ -26,36 +26,24 @@ Cadena final = 123hola123123”.
     <main>
         <div>
         <form action="" method="post">
-            <table>
-                <tr>
-                    <span>Escribe algo: </span>
-                    <input type="text" name="cadena" value="" required>
-                </tr>
-                <tr>
-                    <br>
-                    <span> n: </span>
-                    <input type="number" name="n" value="">
-                </tr>
-                <tr>
-                    <br>
-                    <span> relleno: </span>
-                    <input type="text" name="relleno" value="">
-                </tr>
-                <tr>
-                    <br>
-                    <span> tipo  : </span>
-                    <select name="tipo">
-                        <option value="str_ambos">STR_AMBOS</option>
-                        <option value="str_derecha">STR_DERECHA</option>
-                        <option value="str_izquierda">STR_IZQUIERDA</option>
-                    </select>
-                </tr>
-                <tr>
-                    <br>
-                    <input class="button b1" type="submit" value="Mostrar">
-                    <input class="button b2" type="reset" value="Borrar">
-                </tr>
-            </table>
+            <span>Escribe algo: </span>
+            <input type="text" name="cadena" value="" required>
+            <br>
+            <span> n: </span>
+            <input type="number" name="n" value="">
+            <br>
+            <span> relleno: </span>
+            <input type="text" name="relleno" value="">
+            <br>
+            <span> tipo  : </span>
+            <select name="tipo">
+                <option value="str_ambos">STR_AMBOS</option>
+                <option value="str_derecha">STR_DERECHA</option>
+                <option value="str_izquierda">STR_IZQUIERDA</option>
+            </select>
+            <br>
+            <input class="button b1" type="submit" value="Mostrar">
+            <input class="button b2" type="reset" value="Borrar">
         </form>
 
         <?php
@@ -95,23 +83,28 @@ Cadena final = 123hola123123”.
 
                     } elseif ($tipo === "str_ambos") {
 
-                        $mitad = $resta - 2;
+                        $mitad = $resta / 2;
 
-                        for ($i=0; $i < $resta; $i++) { 
+                        for ($i=0; $i < $mitad; $i++) { 
                         
-                            $cadena .= $mitad;
+                            $cadena .= $relleno;
 
                         }
 
                         $rellenos = "";
 
-                        for ($i=0; $i < $resta; $i++) { 
+                        for ($i=0; $i < $mitad; $i++) { 
                         
-                            $rellenos .= $mitad;
+                            $rellenos .= $relleno;
 
                         }
 
                         $cadena = $rellenos . $cadena;
+                        $len_cadena2 = strlen($cadena);
+
+                        if ($len_cadena2 < $n) {
+                            
+                        }
                         
                     }
 
