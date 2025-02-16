@@ -9,18 +9,18 @@
   </head>
   <body>
     <header>
-      <h2>AF 15.1</h2>
+      <h2>AF 15.2</h2>
     </header>
     <main>
-    <form action="" method="post">
+    <form action="tabla.php" method="post">
 
       <label>Usuario:</label><br>
       <input type="text" name="nombre" class="form-control"><br>
 
       <label>Contraseña:</label><br>
-      <input type="text" name="clave" class="form-control"><br>
+      <input type="password" name="clave" class="form-control"><br>
 
-      <input class="button" type="submit" name="insertar" value="Mostrar datos">
+      <input class="button" type="submit" name="valida" value="Mostrar datos">
 
     </form>
     <?php
@@ -37,23 +37,21 @@
 
           $stmt = $db->prepare("CREATE TABLE IF NOT EXISTS $database.USUARIOS(
             Nombre CHAR(50) NOT NULL,
-            Clave CHAR(60)
+            Clave CHAR(60) NOT NULL,
             CONSTRAINT usuarios_PK PRIMARY KEY (Nombre)
           );");
           $stmt->execute();
           
           // Preparar
-          $stmt = $db->prepare("INSERT INTO plantas (Nombre, Clave) VALUES (:Nombre, :Clave)");
+          $stmt = $db->prepare("INSERT IGNORE INTO usuarios (Nombre, Clave) VALUES (:Nombre, :Clave);");
           $stmt->bindParam(':Nombre', $nombre);
           $stmt->bindParam(':Clave', $clave);
-          $stmt->execute();
-          echo "Se han creado las entradas exitosamente";
 
           $nombre = "Juan";
           $clave = "my_password1";
           $stmt->execute();
 
-          $nombre = "CLara";
+          $nombre = "Clara";
           $clave = "my_password2";
           $stmt->execute();
 
@@ -67,10 +65,6 @@
 
         try {
 
-          if(isset($_POST["nombre"]) && isset($_POST["clave"])) {
-            
-          }
-
           $db = new PDO("mysql:host=$server;dbname=$database", $user);
 
           echo "<table style='' align=center border='2'>";
@@ -82,17 +76,6 @@
           }
           echo "</tr>";
           
-          $resultado = $db->query("SELECT * FROM plantas");
-          while ($registro=$resultado->fetch(PDO::FETCH_ASSOC)) {
-            
-            echo "<tr>";
-            foreach($registro as $valor) {
-              echo "<td>",$valor,"</td>";
-            }
-            echo "<tr>";
-
-          }
-
           echo "</table>";
 
         } catch (PDOException $e) {
@@ -101,8 +84,35 @@
 
       }
 
+      function validar_users($server, $user, $database) {                              // Función para mostrar la tabla
+
+        try {
+
+          if(isset($_POST["valida"])) {
+            $nombre = $_POST["nombre"];
+            $clave = $_POST["clave"];
+            
+            $db = new PDO("mysql:host=$server;dbname=$database", $user);
+
+            $resultado_users = $db->query("SELECT * FROM usuarios");
+            
+              foreach($resultado_users as $valor) {
+                
+                if ($_POST['nombre'] != $valor[0] && $_POST["clave"] != $valor[1]){
+                  echo "Error. Introduce de nuevo el usuario y la contraseña. ";
+                  break; 
+                }
+              }
+
+          }
+        } catch (PDOException $e) {
+          echo "Error: " . $e->getMessage();
+        }
+
+      }
+
       tabla_usuarios_creada($server, $user, $database);
-      salida_tabla($server, $user, $database);
+      validar_users($server, $user, $database);
       
       // Cerrar sesiones
       $db = null;

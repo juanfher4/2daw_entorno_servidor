@@ -123,12 +123,12 @@
               if (empty($nombre)) {
                 $nombre = null;
               } else {
-                $nombre = $nombre;
+                $nombre;
               }
               if (empty($f_plant)) {
                 $f_plant = null;
               } else {
-                $f_plant = $f_plant;
+                $f_plant;
               }
               if (empty($n_ejem)) {
                 $n_ejem = null;
@@ -147,7 +147,7 @@
             $stmt->execute();
             echo "Se han creado las entradas exitosamente";
   
-          }  
+          }
 
         } catch (PDOException $e) {
           echo "<p class='mensaje'>Error, el código de planta que has introducido ya existe.</p>";

@@ -35,7 +35,7 @@ form, .mensaje {
     border: 2px solid #4ca09c;
     border-radius: 12px;
     width: 400px;
-    height: 370px;
+    height: 250px;
     padding-block: 10px;
     font-size: 20px;
     box-shadow: 10px 5px 30px -7px rgba(0,0,0,0.75);
@@ -57,6 +57,8 @@ input:focus-visible {
     color: #015451;
     background-color: #f6ffff !important;
     padding: 8px;
+    border-radius: 5px;
+    border: 2px solid #015451;
 }
 
 .button:hover {
