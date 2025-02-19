@@ -128,7 +128,7 @@ main {
 table {
     border-collapse: collapse;
     border: 2px solid #89e0f1;
-    border-radius: 4px;
+    border-radius: 4px !important;
 }
 
 table th {
@@ -155,8 +155,8 @@ input, select, textarea {
 }
 
 input:hover, select:hover {
-    background-color: #D87235;
-    color: #FFFFFF;
+    background-color: #d8713535;
+    color: #582101a4;
 }
 
 label {

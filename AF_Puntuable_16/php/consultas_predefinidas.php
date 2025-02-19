@@ -19,62 +19,50 @@
 <?php
 
 
-function ejecutar_sql($db) {                              // Función para mostrar la tabla
+function consulta_pred($db) {                              // Función para mostrar la tabla
 
     if (isset($_POST["ejecutar"]) && isset($_POST["consulta"])) {
         $consulta = $_POST["consulta"];
+        $entrada = "";
 
         if ($consulta == "consulta1") {
             $entrada = "SELECT * FROM S WHERE edad < 20 AND nombre LIKE 'A%';";
-        } elseif ($consuta == "consulta2") {
+        } elseif ($consulta == "consulta2") {
             $entrada = "SELECT * FROM S WHERE ciudad IN ('Almeria', 'Granada', 'Malaga', 'Jaen');";
         } elseif ($consulta == "consulta3") {
-            $entrada = "SELECT * FROM S WHERE status < null AND ciudad LIKE 'Malaga';";
+            $entrada = "SELECT * FROM S WHERE status = null AND ciudad LIKE 'Malaga';";
         } elseif ($consulta == "consulta4") {
-            $entrada = "SELECT * FROM S WHERE edad LIKE (SELECT MIN(edad) FROM S);";
+            $entrada = "SELECT * FROM S WHERE edad = (SELECT MIN(edad) FROM S);";
         }
-    
+
         try {
 
             $stmt = $db->prepare($entrada);
             $stmt->execute();
+            $tabla = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            function salida_tabla($db) {                              // Función para mostrar la tabla
-
-                if (isset($_POST["salidaTabla"])) {
-                    $tabla = $_POST["salidaTabla"];
-                    echo "Tabla: $tabla";
-                
-                    try {
-
-                    echo "<table style='' align=center border='2' >";
-                    $campos=$db->query("show columns from $tabla;");
+            if (count($tabla) > 0) {
                     
+                echo "<table>";
+
+                echo "<tr>";
+                foreach ($tabla[0] as $key => $value) {
+                    echo "<th>$key</th>";
+                }
+                echo "</tr>";
+
+                foreach ($tabla as $value) {
                     echo "<tr>";
-                    foreach($campos as $registro) {
-                        echo "<th>".$registro[0]."</th>";
+                    foreach ($value as $key => $value) {
+                        echo "<td>$value</td>";
                     }
                     echo "</tr>";
-                    
-                    $resultado = $db->query("SELECT * FROM $tabla");
-                    while ($registro=$resultado->fetch(PDO::FETCH_ASSOC)) {
-                        
-                        echo "<tr>";
-                        foreach($registro as $valor) {
-                        echo "<td>",$valor,"</td>";
-                        }
-                        echo "<tr>";
-
-                    }
-
-                    echo "</table>";
-
-                    } catch (PDOException $e) {
-                    echo "Error: " . $e->getMessage();
-                    }
-
                 }
 
+                echo "</table>";
+
+            } else {
+                echo "No existen filas para esta consulta.🤷‍♂️​";
             }
 
         } catch (PDOException $e) {
@@ -85,7 +73,7 @@ function ejecutar_sql($db) {                              // Función para mostr
 
 }
 
-ejecutar_sql($db);
+consulta_pred($db)
 
 ?>
 

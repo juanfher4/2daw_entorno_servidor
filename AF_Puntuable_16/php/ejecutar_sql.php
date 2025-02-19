@@ -16,6 +16,10 @@ function ejecutar_sql($db) {                              // Función para mostr
 
     if (isset($_POST["texto"])) {
         $texto = $_POST["texto"];
+        echo $texto;
+        //$tabla = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        
     
         try {
 
@@ -23,7 +27,7 @@ function ejecutar_sql($db) {                              // Función para mostr
             $stmt->execute();
 
         } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            echo "Error: " ;
         }
 
     }

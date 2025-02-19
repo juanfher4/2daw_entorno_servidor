@@ -20,10 +20,10 @@ function borrar_tabla($db) {                              // Función para mostr
     
         try {
 
-            echo "Se ha borrado la tabla: $tabla <br>";
-
             $stmt = $db->prepare("DROP TABLE $tabla");
             $stmt->execute();
+
+            echo "Se ha borrado la tabla: $tabla <br>";
 
         } catch (PDOException $e) {
           echo "Error: la tabla tiene una clave ajena que apunta a otra tabla.";
