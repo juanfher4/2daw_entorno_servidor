@@ -53,8 +53,8 @@ function consulta_pred($db) {                              // Función para most
 
                 foreach ($tabla as $value) {
                     echo "<tr>";
-                    foreach ($value as $key => $value) {
-                        echo "<td>$value</td>";
+                    foreach ($value as $key) {
+                        echo "<td>$key</td>";
                     }
                     echo "</tr>";
                 }

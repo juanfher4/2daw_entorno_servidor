@@ -46,6 +46,7 @@ function salida_tabla($db) {                              // Función para mostr
           foreach ($campos as $registro) {
             echo "<td><input type='text' name='datos[]'></td>";
           }
+          
           echo "<input type='hidden' name='tabla' value='$tabla'>";
           echo '<td><input class="button" type="submit" name="insertar" value="Insertar"></td>';
           echo "</tr>";
