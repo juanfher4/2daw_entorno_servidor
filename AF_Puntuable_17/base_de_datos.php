@@ -72,25 +72,13 @@ function tablas_creadas($db, $database) {
 }
 
 
-function datos_insertados_proveedores($db, $database) {
+function datos_insertados_recetas($db, $database) {
 
     try {
 
-        // Preparar tabla S
+        // Preparar tabla Receta
         $stmt = $db->prepare("INSERT IGNORE INTO $database.Receta (cod_receta,nombre,descripcion,foto,pdf,tiempo) VALUES (:cod_receta,:nombre,:descripcion,:foto,:pdf,:tiempo);");
-        $stmt->bindParam(":cod_receta", $cod_receta);
-        $stmt->bindParam(":nombre", $nombre);
-        $stmt->bindParam(":descripcion", $descripcion);
-        $stmt->bindParam(":foto", $foto);
-        $stmt->bindParam(":pdf", $pdf);
-        $stmt->bindParam(":tiempo", $tiempo);
 
-        $cod_receta = "R1";
-        $nombre = "Salmorejo";
-        $descripcion = "El salmorejo es una deliciosa crema espesa que se toma fría, que puede prepararse majando los ingredientes con paciencia en un mortero, o ayudados de una batidora o un robot de cocina, muy parecida a la porra antequerana y primo hermano del gazpacho, aunque éste debe ser más ligero y cambian algunos ingredientes.";
-        $foto = "/img/salmorejo.jpg";
-        $pdf = "20";
-        $tiempo = "20";
         $stmt->execute();
 
     } catch (PDOException $e) {
@@ -99,44 +87,13 @@ function datos_insertados_proveedores($db, $database) {
 
 }
 
-function datos_insertados_piezas($db) {
+function datos_insertados_categorias($db, $database) {
 
     try {
 
-        // Preparar tabla P
-        $stmt = $db->prepare("INSERT IGNORE INTO prueba.P (Cod_p,Nombre,Color,Peso,Ciudad) VALUES (:Cod_p,:Nombre,:Color,:Peso,:Ciudad);");
-        $stmt->bindParam(":Cod_p", $cod_p);
-        $stmt->bindParam(":Nombre", $nombre);
-        $stmt->bindParam(":Color", $color);
-        $stmt->bindParam(":Peso", $peso);
-        $stmt->bindParam(":Ciudad", $ciudad);
+        // Preparar tabla Categoría
+        $stmt = $db->prepare("INSERT IGNORE INTO $database.Categoria (cod_categoria,nombre,descripcion) VALUES (:cod_categoria,:nombre,:descripcion);");
 
-        $cod_p = "P1";
-        $nombre = "Tornillo";
-        $color = "Rojo";
-        $peso = 100;
-        $ciudad = "Madrid";
-        $stmt->execute();
-
-        $cod_p = "P2";
-        $nombre = "Arandella";
-        $color = "Azul";
-        $peso = 50.5;
-        $ciudad = "Granada";
-        $stmt->execute();
-
-        $cod_p = "P3";
-        $nombre = "Destornillador";
-        $color = "Negro";
-        $peso = 20.4;
-        $ciudad = "Almeria";
-        $stmt->execute();
-
-        $cod_p = "P4";
-        $nombre = "Llave";
-        $color = "Blanca";
-        $peso = 200;
-        $ciudad = "Huelva";
         $stmt->execute();
 
     } catch (PDOException $e) {
@@ -145,44 +102,13 @@ function datos_insertados_piezas($db) {
 
 }
 
-function datos_insertados_proveedores_piezas($db) {
+function datos_insertados_recetas_categorias($db, $database) {
 
     try {
 
-        // Preparar tabla P
-        $stmt = $db->prepare("INSERT IGNORE INTO prueba.SP (Cod_prov,Cod_p,Cantidad) VALUES (:Cod_prov,:Cod_p,:Cantidad);");
-        $stmt->bindParam(":Cod_prov", $cod_prov);
-        $stmt->bindParam(":Cod_p", $cod_p);
-        $stmt->bindParam(":Cantidad", $cantidad);
+        // Preparar tabla Pertenece
+        $stmt = $db->prepare("INSERT IGNORE INTO $database.Pertenece (cod_receta,cod_categoria) VALUES (:cod_receta,:cod_categoria);");
 
-        $cod_prov = "S1";
-        $cod_p = "P1";
-        $cantidad = 300;
-        $stmt->execute();
-
-        $cod_prov = "S1";
-        $cod_p = "P2";
-        $cantidad = 100;
-        $stmt->execute();
-
-        $cod_prov = "S2";
-        $cod_p = "P1";
-        $cantidad = 200;
-        $stmt->execute();
-
-        $cod_prov = "S2";
-        $cod_p = "P3";
-        $cantidad = 500;
-        $stmt->execute();
-
-        $cod_prov = "S3";
-        $cod_p = "P1";
-        $cantidad = 50;
-        $stmt->execute();
-
-        $cod_prov = "S3";
-        $cod_p = "P2";
-        $cantidad = 700;
         $stmt->execute();
 
     } catch (PDOException $e) {
@@ -195,8 +121,8 @@ function datos_insertados_proveedores_piezas($db) {
 database_creada($server, $user, $database);
 $db = conectar_db($server, $user, $database);
 tablas_creadas($db, $database);
-datos_insertados_proveedores($db, $database);
-datos_insertados_piezas($db, $database);
-datos_insertados_proveedores_piezas($db, $database);
+datos_insertados_recetas($db, $database);
+datos_insertados_categorias($db, $database);
+datos_insertados_recetas_categorias($db, $database);
 
 ?>
